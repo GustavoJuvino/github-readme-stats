@@ -63,29 +63,8 @@ function calculateRank({
 
   const normalizedScore = normalcdf(score, TOTAL_VALUES, ALL_OFFSETS) * 100;
 
-  let level = "";
+  let level = "S+";
 
-  if (normalizedScore < RANK_S_VALUE) {
-    level = "S+";
-  }
-  if (
-    normalizedScore >= RANK_S_VALUE &&
-    normalizedScore < RANK_DOUBLE_A_VALUE
-  ) {
-    level = "S";
-  }
-  if (
-    normalizedScore >= RANK_DOUBLE_A_VALUE &&
-    normalizedScore < RANK_A2_VALUE
-  ) {
-    level = "A++";
-  }
-  if (normalizedScore >= RANK_A2_VALUE && normalizedScore < RANK_A3_VALUE) {
-    level = "A+";
-  }
-  if (normalizedScore >= RANK_A3_VALUE && normalizedScore < RANK_B_VALUE) {
-    level = "B+";
-  }
 
   return { level, score: normalizedScore };
 }
